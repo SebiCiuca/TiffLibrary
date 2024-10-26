@@ -34,5 +34,10 @@ namespace TiffLibrary
         /// Gets or sets the maximum number of concurrent decoding pipelines enabled by this <see cref="TiffImageDecoderOptions"/> instance.
         /// </summary>
         public int MaxDegreeOfParallelism { get; set; } = 1;
+
+        /// <summary>
+        /// Use this as int to flag another type of photometric interpretation.
+        /// </summary>
+        public int PhotometricInterpretation { get; set; } = -1;
     }
 }

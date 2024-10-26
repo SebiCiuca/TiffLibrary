@@ -995,6 +995,12 @@ namespace TiffLibrary.ImageDecoder
                 case TiffPhotometricInterpretation.PaletteColor:
                     if (bitsPerSample.Count == 1)
                     {
+                        //Custom check added for DISS2 images that are Gray8, but have 10 system colors and their default photometric interpretation is PaletteColor
+                        if ((TiffPhotometricInterpretation)options.PhotometricInterpretation == TiffPhotometricInterpretation.BlackIsZero)
+                        {
+                            return ResolveBlackIsZeroAsync(bitsPerSample.GetFirstOrDefault(), tagReader, cancellationToken);
+                        }
+
                         return ResolvePaletteColorAsync(bitsPerSample.GetFirstOrDefault(), tagReader, cancellationToken);
                     }
                     break;

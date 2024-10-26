@@ -775,8 +775,17 @@ namespace TiffLibrary
         /// <param name="tag">The tag to read.</param>
         /// <returns>The values read.</returns>
         [CLSCompliant(false)]
+
+/* Unmerged change from project 'TiffLibrary (net461)'
+Before:
         public TiffValueCollection<long> ReadSLong8Field(TiffTag tag)
             => ReadSLong8Field(tag);
+After:
+        public static TiffValueCollection<long> ReadSLong8Field(TiffTag tag)
+            => ReadSLong8Field(tag);
+*/
+        public static TiffValueCollection<long> ReadSLong8Field(TiffTag tag)
+            => TiffTagReader.ReadSLong8Field(tag);
 
         /// <summary>
         /// Read values of type <see cref="TiffFieldType.SLong8"/> from the specified tag.
@@ -1057,7 +1066,7 @@ namespace TiffLibrary
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> that fires if the user want to stop the current task.</param>
         /// <returns>A <see cref="ValueTask{TiffValueCollection}"/> that completes when the values are read and return the read values.</returns>
         [CLSCompliant(false)]
-        public ValueTask<TiffValueCollection<TiffStreamOffset>> ReadIFD8FieldAsync(TiffTag tag, CancellationToken cancellationToken = default)
+        public static ValueTask<TiffValueCollection<TiffStreamOffset>> ReadIFD8FieldAsync(TiffTag tag, CancellationToken cancellationToken = default)
             => ReadIFD8FieldAsync(tag, cancellationToken);
 
         /// <summary>
