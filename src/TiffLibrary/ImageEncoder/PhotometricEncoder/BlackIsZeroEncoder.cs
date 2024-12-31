@@ -8,6 +8,7 @@ namespace TiffLibrary.ImageEncoder.PhotometricEncoder
     {
         #region Added dummy implementation to test version.json
         public int DummyProperty { get; set; }
+        public int DummyValue { get; set; }
         #endregion
         public async ValueTask InvokeAsync(TiffImageEncoderContext<TPixel> context, ITiffImageEncoderPipelineNode<TPixel> next)
         {
