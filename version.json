@@ -1,12 +1,8 @@
 {
-  "version": "0.7-dev",
+  "$schema": "https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/main/src/NerdBank.GitVersioning/version.schema.json",
+  "version": "2.0",
   "publicReleaseRefSpec": [
-    "^refs/heads/master$",
-    "^refs/heads/release/\\d+(?:\\.\\d+)?$"
+    "^refs/heads/main$", // we release out of master
+    "^refs/tags/v\\d+\\.\\d+" // we also release tags starting with vN.N
   ],
-  "cloudBuild": {
-    "buildNumber": {
-      "enabled": true
-    }
-  }
 }
