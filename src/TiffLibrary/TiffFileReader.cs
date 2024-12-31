@@ -686,7 +686,7 @@ namespace TiffLibrary
                 ThrowHelper.ThrowObjectDisposedException(nameof(TiffFileReader));
             }
 
-            return TiffDefaultImageDecoderFactory.CreateImageDecoderAsync(_operationContext, _contentSource, ifd, options, cancellationToken);
+            return TiffDefaultImageDecoderFactory.CreateImageDecoderAsync   (_operationContext, _contentSource, ifd, options, cancellationToken);
         }
 
         #endregion
