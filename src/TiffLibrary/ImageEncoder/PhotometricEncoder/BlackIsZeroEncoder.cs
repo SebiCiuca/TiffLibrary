@@ -6,6 +6,9 @@ namespace TiffLibrary.ImageEncoder.PhotometricEncoder
 {
     internal class BlackIsZeroEncoder<TPixel> : ITiffImageEncoderMiddleware<TPixel> where TPixel : unmanaged
     {
+        #region Added dummy implementation to test version.json
+        public int DummyProperty { get; set; }
+        #endregion
         public async ValueTask InvokeAsync(TiffImageEncoderContext<TPixel> context, ITiffImageEncoderPipelineNode<TPixel> next)
         {
             bool is16Bit = typeof(TPixel) == typeof(TiffGray16);
